@@ -41,8 +41,9 @@ n,N -> Next result forward/backward
 Copy/Paste
 
 y -> copy 
-yw, 5yw -> copy intended word
-p,P -> paste right/left side of the cursor
+yw, 5yw -> copy intended word on vim clipboard
+p,P -> paste right/left side of the cursor on vim clipboard
+"*p -> paste from outsite(the register depends on using OS, in order to get further information type ":help clipboard") 
 
 -------------------------------------------------------------------------------------------------------------------------
 Undo/Redo
