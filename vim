@@ -41,6 +41,7 @@ n,N -> Next result forward/backward
 Copy/Paste
 
 y -> copy 
+yy, 8yy -> copy intended line on vim clipboard
 yw, 5yw -> copy intended word on vim clipboard
 p,P -> paste right/left side of the cursor on vim clipboard
 "*p -> paste from outsite(the register depends on using OS, in order to get further information type ":help clipboard") 
